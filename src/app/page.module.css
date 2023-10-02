@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
+  min-height: 1000px;
 }
 
 .description {
@@ -227,3 +227,4 @@
     transform: rotate(0deg);
   }
 }
+
