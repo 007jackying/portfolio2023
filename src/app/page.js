@@ -8,9 +8,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <section className='section'>
-
-        </section>
-      <section className='section'>
       <Welcome />
       </section>
       <section style={{

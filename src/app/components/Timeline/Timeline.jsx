@@ -53,8 +53,8 @@ export default function Timeline()  {
     <motion.h1>
      My Story So far...
     </motion.h1>
-    <Chrono items={items} mode="VERTICAL_ALTERNATING" mediaHeight={500}	/>
-
+    <Chrono items={items} 
+    mode="VERTICAL_ALTERNATING" mediaHeight={500}	/>
     </section>
   )
 }
