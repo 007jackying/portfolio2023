@@ -70,46 +70,64 @@ export default function Projects() {
 }
 
 const WebApps = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-  return (<>
-  <Row gutter={16}>
-    {
-      webProjects.map((project) => {
-        return (
-          <Col key={project.id+322} span={8}>
-            <Card
-            key={project.id+241231}
-              hoverable
-              onClick={showModal}
-              style={{ width: '80%' }}
-              cover={<img key={project.id+61278367281631278} alt="example" src={project.image} />}
-            >
-              <Meta key={project.title+1122} title={project.title} style={{width: '100%'}}/>
-            </Card>
-            <Modal key={project.id+312837918} title={project.title} open={isModalOpen} onOk={handleOk}
-        onCancel={handleCancel} footer={null}>
-            <Image key={project.id+3128379182287872} src={project.image} width={300} height={300} alt={project.title} />
-            <p key={project.id+312837918172398721} >{project.description}</p>
-            </Modal>
-          </Col>
-           
+  const [projects, setProjects] = React.useState(webProjects);
 
-          
-        )
-      })
-    }
-  </Row>
-  </>
-    
-    
+  const showModal = (projectId) => {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project.id === projectId ? { ...project, isModalOpen: true } : project
+      )
+    );
+  };
+
+  const handleOk = (projectId) => {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project.id === projectId ? { ...project, isModalOpen: false } : project
+      )
+    );
+  };
+
+  const handleCancel = (projectId) => {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project.id === projectId ? { ...project, isModalOpen: false } : project
+      )
+    );
+  };
+
+  return (
+    <>
+      <Row gutter={16}>
+        {projects.map((project) => {
+          return (
+            <Col key={project.id + 322} span={8}>
+              <Card
+                key={project.id + 241231}
+                hoverable
+                onClick={() => showModal(project.id)}
+                style={{ width: "80%" }}
+                cover={<img key={project.id + 61278367281631278} alt="example" src={project.image} />}
+              >
+                <Meta key={project.title + 1122} title={project.title} style={{ width: "100%" }} />
+              </Card>
+              <Modal
+                key={project.id + 312837918}
+                title={project.title}
+                open={project.isModalOpen}
+                onOk={() => handleOk(project.id)}
+                onCancel={() => handleCancel(project.id)}
+                footer={null}
+              >
+                <Image key={project.id + 3128379182287872} src={project.image} width={470} height={300} alt={project.title} />
+                <p style={{
+                  fontFamily: 'Roboto',
+                }} key={project.id + 312837918172398721}>{project.description}</p>
+              </Modal>
+            </Col>
+          );
+        })}
+      </Row>
+    </>
   );
-}
+};

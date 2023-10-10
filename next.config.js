@@ -3,7 +3,7 @@ const nextConfig = {
 
     reactStrictMode: true,
     images: {
-        domains: ['gw.alipayobjects.com'],
+        domains: ['gw.alipayobjects.com','uploads-ssl.webflow.com'],
     },
 }
 

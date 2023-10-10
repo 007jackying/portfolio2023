@@ -4,11 +4,12 @@ body {
   --black: #111111;
   --white: #fdfdfd;
   --green: #22cc88;
+  --grey: #7A7D7D;
   --blue: #0055ff;
   --purple: #8855ff;
   --red: #ff0055;
   --orange: #ee4444;
-  --yellow: #ffcc00;
+  --yellow: #F7D08A;
   --mustard: #ffaa00;
 
   --background: var(--black);

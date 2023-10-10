@@ -1,6 +1,6 @@
 import About from './components/About/About'
 import Projects from './components/Projects/Projects'
-import Timeline from './components/Timeline/Timeline'
+import History from './components/Timeline/Timeline'
 import Welcome from './components/WelcomePage/WelcomeAnimation'
 import styles from './page.module.css'
 
@@ -11,14 +11,19 @@ export default function Home() {
       <Welcome />
       </section>
       <section style={{
-        height: '100vh',
+        marginBottom: '10vh',
       }}> 
       <About/>
       </section>
-      <section className='section'>
-        <Timeline/>
+      <section className='section' style={{
+        marginBottom: '10vh',
+      }}>
+        <History/>
         </section>
-        <section  className='section'>
+        <section  className='section' style={{
+        marginTop: '10vh',
+        marginBottom: '10vh',
+      }}>
           <Projects/>
         </section>
     </main>
